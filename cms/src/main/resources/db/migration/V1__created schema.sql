@@ -3,41 +3,41 @@ create table userDetail(
 	id serial,
     name varchar(200) Default null,
     email varchar(200) Default null UNIQUE,
-    phoneNo varchar(200) Default null UNIQUE,
-    userType roles not null default 'Employee',
+    phone_no varchar(200) Default null UNIQUE,
+    user_type roles not null default 'Employee',
     primary key(id)
 );
 	/* for desc of table : \d tableName*/
 create table menu(
 	id serial,
-    itemName varchar(200) NOT NULL,
-    itemType varchar(200) default NULL,
+    item_name varchar(200) NOT NULL,
+    item_type varchar(200) default NULL,
     price int not null,
-    available boolean default true,
+    available boolean,
     primary key(id)
 );
 create table orderList(
 	id serial,
-    itemId int not null,
-    userId int not null,
-    createdAt timestamp default current_timestamp,
+    item_id int not null,
+    user_id int not null,
+    created_at timestamp default current_timestamp,
     quantity int not null,
     cost int not null,
-    isReady boolean default false,
-    foreign key(itemId) references menu(id),
-    foreign key(userId) references userDetail(id),
+    is_ready boolean default false,
+    foreign key(item_id) references menu(id),
+    foreign key(user_id) references userDetail(id),
     primary key(id)
 );
 create table feedback(
 	id serial,
 	detail varchar(1000) not null,
-    createdAt timestamp default current_timestamp,
-	userId int not null,
-	foreign key(userId) references userDetail(id)
+    created_at timestamp default current_timestamp,
+	user_id int not null,
+	foreign key(user_id) references userDetail(id)
 );
 create table inventory(
 	id serial,
-    inventoryName varchar(200) NOT NULL,
+    inventory_name varchar(200) NOT NULL,
     stock int not null,
     expiry timestamp default null
 );
