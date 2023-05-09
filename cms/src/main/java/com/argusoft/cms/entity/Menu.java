@@ -14,16 +14,14 @@ public class Menu {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name = "itemName")
+    @Column(name = "item_name")
     private String itemName;
 
-    @Column(name = "itemType")
+    @Column(name = "item_type")
     private String itemType;
     @Column(name = "price")
     private int price;
     @Column(name = "available")
-    private boolean available;
-
-
+    private Boolean available = Boolean.TRUE;
 
 }
