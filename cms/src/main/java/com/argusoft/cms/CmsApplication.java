@@ -10,5 +10,4 @@ public class CmsApplication {
 		SpringApplication.run(CmsApplication.class, args);
 		System.out.println("Hari");
 	}
-
 }

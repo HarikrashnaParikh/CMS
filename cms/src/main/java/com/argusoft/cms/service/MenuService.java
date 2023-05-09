@@ -1,18 +1,19 @@
 package com.argusoft.cms.service;
 
 import com.argusoft.cms.entity.Menu;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface MenuService {
-    List<Menu> getAllMenus();
+    public List<Menu> getAllMenus();
 
-    Menu getMenuById(int id);
+    public Menu getMenuById(int id);
 
-    Menu addMenu(Menu menu);
+    public Menu addMenu(Menu menu);
 
-    Menu updateMenu(Menu menu);
+    public Menu updateMenu(int id, Menu menu);
 
-    void deleteMenu(int id);
+    public void deleteMenu(int id);
 }
 

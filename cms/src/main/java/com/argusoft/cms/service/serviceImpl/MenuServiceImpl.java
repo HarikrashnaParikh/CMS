@@ -33,7 +33,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public Menu updateMenu(Menu menu) {
+    public Menu updateMenu(int id, Menu menu) {
         return menuRepository.save(menu);
     }
 
